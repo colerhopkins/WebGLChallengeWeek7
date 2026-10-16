@@ -1,12 +1,13 @@
 Reflection Questions:
 
 Which material looked the most realistic?
-
+MeshPhongMaterial looked pretty realistic with the shading, shininy, and reflectivity you can adjust with its properties
 
 Which material looked the most cartoon-like?
-
+MeshToonMaterial looked the most cartoon-like because of its shading.
 
 Which material would you use for a metal robot?
-
+I would use MeshStandardMaterial for a metal robot and adjust both metalness and roughness.
 
 How did adding the spotlight affect the scene?
+Adding the spotlight helped exemplify the properties of the gold sphere and the shadows help create depth.
