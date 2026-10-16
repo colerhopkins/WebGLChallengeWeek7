@@ -1,6 +1,7 @@
 import * as THREE from 'three';
 import { OrbitControls } from 'three/addons/controls/OrbitControls.js';
-
+// What material is currently used throughout the museum? MeshBasicMaterial is used throughout the museum
+// Why do the objects appear flat and similar? There's no light or shadows affecting the color of the objects, so they appear boring
 // ---------------------------------------------------
 // Scene
 // ---------------------------------------------------
@@ -141,13 +142,17 @@ const greenMaterial =
     });
 
 const cyanMaterial =
-    new THREE.MeshBasicMaterial({
-        color: 0x00bcd4
+    new THREE.MeshPhongMaterial({
+        color: 0x00bcd4,
+        shininess: 100
     });
 
-const redMaterial =
-    new THREE.MeshBasicMaterial({
-        color: 0xff4d4d
+const goldMaterial =
+    new THREE.MeshStandardMaterial({
+        color: 0xffd700,
+        metalness: 1.0,
+        roughness: 0.4
+        
     });
 
 const whiteMaterial =
@@ -161,7 +166,7 @@ const orangeMaterial =
     });
 
 const magentaMaterial =
-    new THREE.MeshBasicMaterial({
+    new THREE.MeshToonMaterial({
         color: 0xff4fd8
     });
 
@@ -184,7 +189,7 @@ createPedestal(-9, -4);
 const sphere =
     new THREE.Mesh(
         new THREE.SphereGeometry(1, 32, 32),
-        redMaterial
+        goldMaterial
     );
 
 placeOnPedestal(sphere, -9, -4);
