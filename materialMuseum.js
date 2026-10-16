@@ -69,6 +69,13 @@ const helper = new THREE.PointLightHelper(
 
 scene.add(helper);
 
+const goldLight = new THREE.SpotLight(0xffffff, 200);
+goldLight.position.set(-9, 10, 0);
+goldLight.target.position.set(-9, 2, -4);
+goldLight.castShadow = true;
+scene.add(goldLight);
+scene.add(goldLight.target);
+
 // ---------------------------------------------------
 // Floor
 // ---------------------------------------------------
@@ -137,14 +144,15 @@ const yellowMaterial =
     });
 
 const greenMaterial =
-    new THREE.MeshBasicMaterial({
+    new THREE.MeshLambertMaterial({
         color: 0x2ecc71
     });
 
 const cyanMaterial =
     new THREE.MeshPhongMaterial({
         color: 0x00bcd4,
-        shininess: 100
+        specular: 0xffffff,
+        shininess: 100,
     });
 
 const goldMaterial =
@@ -171,7 +179,7 @@ const magentaMaterial =
     });
 
 const purpleMaterial =
-    new THREE.MeshBasicMaterial({
+    new THREE.MeshNormalMaterial({
         color: 0x9b59b6
     });
 
